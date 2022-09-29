@@ -7,11 +7,21 @@ class Start {
         Player[] team = { new Player("David B", 7),
                            new Player("Michael O", 10),
                            new Player("Frank L", 8),
-                            new Player("David J", 1)};
+                            new Player("David J", 8)};
         Arrays.sort(team, new PlayerComparator());
         for(Player p : team) {
             System.out.println( p.name());
         }
+        Show s = new Show();
+        s.print(7);
+    }
+}
+
+class Show {
+    void print(int n) {
+        if (n == 0) return;
+        print(n-1);
+        System.out.println(n);
     }
 }
 
