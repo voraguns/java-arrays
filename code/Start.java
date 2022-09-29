@@ -8,7 +8,7 @@ class Start {
                            new Player("Michael O", 10),
                            new Player("Frank L", 8),
                             new Player("David J", 1)};
-        Arrays.sort(team, (p, q) -> p.number() - q.number());
+        Arrays.sort(team, (p, q) -> p.name().compareTo(q.name()));
         for(Player p : team) {
             System.out.println( p.name() + " " + p.number());
         }
