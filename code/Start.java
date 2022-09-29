@@ -10,25 +10,16 @@ class Start {
         list.add(new Player("Frank L", 8));
         list.add(new Player("David J", 1));
         
-        // ถามทีละตัว
-        var result = list.stream()
-                .filter(x -> x.number() >= 8)
+        var result = list.stream().map(x ->  
+                new Player(x.name(), x.number() + 3))
                 .toList();
-        System.out.println(list);
         System.out.println(result);
         
         var a = new LinkedList<Integer>();
-        for (int i = 0; i < 40000000; i++) a.add(i);
-        long start = System.currentTimeMillis();
-        long stop = System.currentTimeMillis();
-        // write code to fillter only value that can divide by 785
-        
-        // ทำงานตาม CPU
-//        var b = a.parallelStream()
-//                .filter(x -> x % 785 == 0)
-//                .toList();
-//        System.out.println(b);
-        System.out.println(start - stop);
+        for (int i = 0; i < 100; i++) a.add(i);
+        // Write code to convert by multiple by 2
+        var b = a.stream().map(x -> (double)(2 * x)).toList();
+        System.out.println(b);
     }
 }
 
