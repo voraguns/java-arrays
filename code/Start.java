@@ -13,11 +13,8 @@ class Start {
         list.stream().forEach(p -> System.out.println(p.name()));
         
         // Write code to find the total of number of each player
-//        var w = list.stream().reduce(0, (result, (Object)p) -> {
-//            System.out.println((Player)p);
-//            return result + ((Player)p).number();
-//        });
-//        System.out.println(w);
+        var w = list.stream().map(p -> p.number()).reduce(0, (result, p) -> result + p);
+        System.out.println(w);
         
         var a = new LinkedList<Integer>();
         for (int i = 0; i < 10; i++) a.add(i);
